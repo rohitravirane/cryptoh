@@ -1,13 +1,13 @@
-import React from "react";
-import millify from "millify";
-import { Typography, Row, Col, Statistic, Card } from "antd";
-import { RightCircleOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import React from 'react';
+import millify from 'millify';
+import { Typography, Row, Col, Statistic, Card } from 'antd';
+import { RightCircleOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
-import { useGetCryptosQuery } from "../services/cryptoApi";
-import Cryptocurrencies from "./Cryptocurrencies";
-import News from "./News";
-import Loader from "./Loader";
+import { useGetCryptosQuery } from '../services/cryptoApi';
+import Cryptocurrencies from './Cryptocurrencies';
+import News from './News';
+import Loader from './Loader';
 
 const { Title } = Typography;
 
@@ -18,8 +18,8 @@ const Homepage = () => {
   if (isFetching) return <Loader />;
 
   const myStyle = {
-    borderRadius: "20px",
-    margin: "6px",
+    borderRadius: '20px',
+    margin: '6px',
   };
 
   return (

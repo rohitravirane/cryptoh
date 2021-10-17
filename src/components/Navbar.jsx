@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Button, Menu, Typography, Avatar, Dropdown } from "antd";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Button, Menu, Typography, Avatar, Dropdown } from 'antd';
+import { Link } from 'react-router-dom';
 import {
   HomeOutlined,
   MoneyCollectOutlined,
   BulbOutlined,
   FundOutlined,
   MenuOutlined,
-} from "@ant-design/icons";
+} from '@ant-design/icons';
 
-import icon from "../images/bitcoin.png";
+import icon from '../images/bitcoin.png';
 
 const menu = (
-  <Menu style={{ backgroundColor: "#fff" }}>
+  <Menu style={{ backgroundColor: '#fff' }}>
     <Menu.Item icon={<HomeOutlined />}>
       <Link to="/">Home</Link>
     </Menu.Item>
@@ -35,11 +35,11 @@ const Navbar = () => {
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     handleResize();
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -52,11 +52,11 @@ const Navbar = () => {
 
   return (
     <div className="nav-container">
-      <div className="logo-container" style={{ backgroundColor: "#fff" }}>
-        <Avatar src={icon} size="large" style={{ bottom: "8px" }} />
+      <div className="logo-container" style={{ backgroundColor: '#fff' }}>
+        <Avatar src={icon} size="large" style={{ bottom: '8px' }} />
         <Typography.Title level={2} className="logo">
-          <Link to="/" style={{ color: "rgb(255, 160, 50)" }}>
-            Cryptohub
+          <Link to="/" style={{ color: 'rgb(255, 160, 50)' }}>
+            Cryptoh
           </Link>
         </Typography.Title>
       </div>
@@ -68,9 +68,7 @@ const Navbar = () => {
           <MenuOutlined className="" />
         </Button>
       </Dropdown>
-      { activeMenu && (
-        menu
-      )}
+      {activeMenu && menu}
     </div>
   );
 };

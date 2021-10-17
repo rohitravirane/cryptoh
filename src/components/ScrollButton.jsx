@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Button } from "antd";
-import { ArrowUpOutlined } from "@ant-design/icons";
+import React, { useState } from 'react';
+import { Button } from 'antd';
+import { ArrowUpOutlined } from '@ant-design/icons';
 
 const ScrollButton = () => {
   const [visible, setVisible] = useState(false);
@@ -16,16 +16,25 @@ const ScrollButton = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
-  window.addEventListener("scroll", toggleVisible);
+  window.addEventListener('scroll', toggleVisible);
   return (
-    <div style={{ textAlign: "center", backgroundColor: '#f0f0f0' }}>
-      <Button onClick={scrollToTop} style={{ outline: 'none', border: 'none', backgroundColor: '#91d5ff'}}>
-        <ArrowUpOutlined />
-      </Button>
+    <div style={{ textAlign: 'center', backgroundColor: '#f0f0f0' }}>
+      {visible && (
+        <Button
+          onClick={scrollToTop}
+          style={{
+            outline: 'none',
+            border: 'none',
+            backgroundColor: '#91d5ff',
+          }}
+        >
+          <ArrowUpOutlined />
+        </Button>
+      )}
     </div>
   );
 };
